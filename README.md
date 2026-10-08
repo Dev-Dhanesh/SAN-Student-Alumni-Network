@@ -1,4 +1,4 @@
-# SAN – Student Alumni Network (Saveetha Alumni Network)
+# SAN – Student Alumni Network
 
 **Connect • Guide • Grow**  
 *Your College Network. Your Career Advantage.*
