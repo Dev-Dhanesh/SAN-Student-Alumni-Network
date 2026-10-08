@@ -1,0 +1,263 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>SAN – Student Alumni Network</title>
+<style>
+:root{--bg:#070D1F;--c:rgba(255,255,255,.055);--b:rgba(255,255,255,.1);--t:#EAF0FF;--m:#9FB0D6;--g:linear-gradient(135deg,#22B8FF,#8B5CF6);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:var(--bg);color:var(--t);font:500 16px/1.55 'Segoe UI',system-ui,-apple-system,sans-serif}
+h1,h2,h3{margin:0;line-height:1.15;letter-spacing:-.02em}a{color:inherit;text-decoration:none}[hidden]{display:none!important}
+.w{max-width:1180px;margin:0 auto;padding:0 20px}.sec{padding:72px 0}.mu{color:var(--m)}.gt{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+#nav{position:sticky;top:0;z-index:30;background:rgba(7,13,31,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--b)}
+#nav .w{display:flex;align-items:center;gap:20px;min-height:64px}#nav img{height:46px;width:auto;max-width:140px;object-fit:contain;cursor:pointer}
+#links{display:flex;gap:6px;margin-left:12px;flex:1}#links a,.lk{padding:8px 14px;border-radius:99px;color:var(--m);cursor:pointer;font-weight:600;font-size:15px;transition:.2s}#links a:hover,#links a.on{color:#fff;background:var(--c)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 22px;border-radius:99px;border:1px solid var(--b);background:var(--c);color:#fff;font:700 15px inherit;font-family:inherit;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.1)}.pr{background:var(--g);border:0;box-shadow:0 8px 28px rgba(99,102,241,.4)}.pr:hover{background:var(--g);box-shadow:0 12px 34px rgba(99,102,241,.55)}.lg{padding:14px 30px;font-size:17px}.sm{min-height:36px;padding:6px 16px;font-size:14px}
+#burger{display:none}.card{background:var(--c);border:1px solid var(--b);border-radius:20px;padding:22px;transition:.25s}.card:hover{transform:translateY(-4px);border-color:rgba(139,92,246,.6)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}.g4{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.chip{display:inline-block;padding:3px 11px;border-radius:99px;background:rgba(34,184,255,.12);color:#7fd4ff;font-size:12.5px;font-weight:700;margin:3px 4px 0 0}.chip.p{background:rgba(139,92,246,.18);color:#c4b0ff}
+.av{width:48px;height:48px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center;font-weight:800;flex:none}
+input,select,textarea{width:100%;min-height:44px;padding:10px 14px;border-radius:12px;border:1px solid var(--b);background:rgba(255,255,255,.06);color:#fff;font:inherit}select option{color:#000}input::placeholder,textarea::placeholder{color:#7f8fb5}
+label{display:block;font-size:13px;font-weight:700;color:var(--m);margin:12px 0 5px}.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.row>*{flex:1 1 150px}
+.hero{position:relative;overflow:hidden;text-align:center;padding:56px 0 80px}.hero .w{position:relative;z-index:2}
+#bgs{position:absolute;inset:0;width:100%;height:100%;opacity:.55}.nd{animation:pl 3.5s ease-in-out infinite}@keyframes pl{50%{opacity:.3;transform:scale(1.4)}}.nd{transform-box:fill-box;transform-origin:center}
+.logo{width:min(260px,70%);max-height:280px;object-fit:contain;margin:0 auto 10px;animation:rv 1.6s cubic-bezier(.2,.7,.2,1) both}@keyframes rv{from{clip-path:inset(0 100% 0 0);transform:scale(.92);filter:blur(8px)}to{clip-path:inset(0);transform:none;filter:none}}
+.tag{letter-spacing:.35em;font-weight:700;font-size:15px;animation:fi 1s 1.3s both;text-transform:uppercase}@keyframes fi{from{opacity:0;transform:translateY(10px)}}
+.fl{position:absolute;z-index:1;width:200px;text-align:left;font-size:13px;animation:fy 6s ease-in-out infinite;backdrop-filter:blur(8px)}@keyframes fy{50%{transform:translateY(-14px)}}
+.rv{opacity:0;transform:translateY(24px);transition:.7s}.rv.in,html:not(.js) .rv{opacity:1;transform:none}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:s}.steps .card{position:relative;padding-top:50px}.steps .card:before{counter-increment:s;content:counter(s);position:absolute;top:-18px;left:22px;width:40px;height:40px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center;font-weight:800}
+.pg{padding:40px 0 70px}.pg h1{font-size:clamp(28px,5vw,42px);margin-bottom:6px}.bar{height:8px;border-radius:9px;background:rgba(255,255,255,.1);overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:var(--g);border-radius:9px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 16px}.tabs button{white-space:nowrap}.tabs .on{background:var(--g);border:0}
+#mod{position:fixed;inset:0;z-index:50;background:rgba(3,6,15,.75);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}#mb{background:#0F1730;border:1px solid var(--b);border-radius:24px;padding:28px;width:100%;max-width:520px;max-height:92vh;overflow:auto;animation:fi .3s}
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#fff;color:#0a1030;padding:12px 22px;border-radius:99px;font-weight:700;z-index:60;box-shadow:0 10px 30px #0008}
+footer{border-top:1px solid var(--b);padding:44px 0;text-align:center}footer a{margin:6px 10px;display:inline-block;color:var(--m);cursor:pointer}footer a:hover{color:#fff}
+.row>.av{flex:none}.chip.g{background:rgba(34,197,94,.18);color:#4ade80}.gm{border-color:#22c55e!important;box-shadow:0 0 0 1px rgba(34,197,94,.4),0 12px 32px rgba(34,197,94,.18)}.gm .bar i{background:#22c55e}.gp{color:#4ade80}
+@media(max-width:860px){#burger{display:inline-flex;margin-left:auto}#links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:#0b1128;padding:12px 20px;margin:0;border-bottom:1px solid var(--b)}#links.open{display:flex}#nav .au{display:none}.fl{display:none}.sec{padding:48px 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style></head><body>
+<header id="nav"><div class="w"><img src="logo.png" alt="SAN logo" data-go="home"><nav id="links" aria-label="Main"><a data-go="home">Home</a><a data-go="opps">Opportunities</a><a data-go="alumni">Alumni</a><a data-go="stories">Stories</a><a data-go="about">About</a></nav><div class="au row" id="auth" style="flex:none;flex-wrap:nowrap"></div><button class="btn sm" id="burger" aria-label="Menu">Menu</button></div></header>
+<main>
+<div id="v-home" class="view">
+<section class="hero"><svg id="bgs" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+<div class="fl card" style="left:4%;top:90px"><b>Priya N. · Google</b><br><span class="mu">Alumni 2019 · Mentor</span><br><span class="chip">System Design</span></div>
+<div class="fl card" style="right:4%;top:130px;animation-delay:-2s"><b>Hackathon</b><br><span class="mu">Team needs a UI designer</span><br><span class="chip p">94% match</span></div>
+<div class="fl card" style="left:9%;bottom:60px;animation-delay:-4s"><b>Internship opened</b><br><span class="mu">Backend Intern · Zoho</span></div>
+<div class="fl card" style="right:8%;bottom:70px;animation-delay:-1s"><b>Career growth</b><div class="bar"><i style="width:72%"></i></div><span class="mu">Profile 72% complete</span></div>
+<div class="w"><img class="logo" src="logo.png" alt="SAN"><div class="mu" style="font-weight:700;margin-top:4px">Student Alumni Network</div><div class="tag gt" style="margin:6px 0 30px">Connect • Guide • Grow</div>
+<h1 style="font-size:clamp(32px,6vw,60px);max-width:820px;margin:0 auto 16px">Your College Network. <span class="gt">Your Career Advantage.</span></h1>
+<p class="mu" style="max-width:660px;margin:0 auto 30px;font-size:18px">Connect with experienced alumni, discover opportunities, find teammates, and build your career through one trusted college community.</p>
+<div class="row" style="justify-content:center"><button class="btn pr lg" data-act="join" data-id="student" style="flex:0 1 auto">I’m a Student</button><button class="btn lg" data-act="join" data-id="alumni" style="flex:0 1 auto">I’m an Alumni</button></div>
+<p class="mu" style="font-size:14px;margin-top:22px">Stop searching across WhatsApp, LinkedIn and scattered groups. Students get guidance and opportunities; alumni give back.</p></div></section>
+<section class="sec"><div class="w rv"><h2 style="text-align:center;margin-bottom:8px">Why <span class="gt">SAN</span>?</h2><p class="mu" style="text-align:center;max-width:720px;margin:0 auto 34px">Students currently hunt for guidance, internships, jobs, hackathons, events and teammates across WhatsApp groups, LinkedIn and social media. SAN brings everything into one trusted college ecosystem.</p>
+<div class="grid g4"><div class="card"><h3>Learn from Alumni</h3><p class="mu">Real experiences, career journeys and interview guidance.</p></div><div class="card"><h3>Discover Opportunities</h3><p class="mu">Find internships, jobs, hackathons and events.</p></div><div class="card"><h3>Build Your Team</h3><p class="mu">Find teammates based on skills and interests.</p></div><div class="card"><h3>Grow Your Career</h3><p class="mu">Get mentorship and personalized career guidance.</p></div></div></div></section>
+<section class="sec" style="background:rgba(255,255,255,.025)"><div class="w rv"><h2 style="text-align:center;margin-bottom:40px">How <span class="gt">SAN</span> works</h2><div class="steps"><div class="card"><h3>Create Profile</h3><p class="mu">Students and alumni create their profiles.</p></div><div class="card"><h3>Discover</h3><p class="mu">Find mentors, opportunities and teammates.</p></div><div class="card"><h3>Connect</h3><p class="mu">Send requests and communicate.</p></div><div class="card"><h3>Grow</h3><p class="mu">Learn, collaborate and build your career.</p></div></div></div></section>
+<section class="sec"><div class="w rv"><div class="row" style="margin-bottom:22px"><h2 style="flex:3 1 300px">Stories <span class="gt">&amp; Updates</span></h2><button class="btn sm" data-go="stories" style="flex:0 0 auto">All stories</button></div><div class="grid" id="hs"></div></div></section>
+<section class="sec" id="about"><div class="w rv" style="max-width:820px;text-align:center"><h2 style="margin-bottom:14px">About <span class="gt">SAN</span> – Student Alumni Network</h2><p class="mu" style="font-size:18px">SAN creates a continuous connection between current students and alumni. Students gain access to knowledge and opportunities, while alumni can give back by sharing their experience, mentoring students and supporting the next generation.</p></div></section>
+<section class="sec"><div class="w rv card" style="text-align:center;padding:52px 22px;background:linear-gradient(135deg,rgba(34,184,255,.15),rgba(139,92,246,.2))"><h2 style="margin-bottom:12px">Your next opportunity could be one connection away.</h2><p class="mu" style="max-width:620px;margin:0 auto 26px">Join SAN and connect with the people, opportunities and experiences that can shape your career.</p><div class="row" style="justify-content:center"><button class="btn pr lg" data-act="join" data-id="student" style="flex:0 1 auto">Join as Student</button><button class="btn lg" data-act="join" data-id="alumni" style="flex:0 1 auto">Join as Alumni</button></div></div></section>
+</div>
+<div id="v-opps" class="view pg w" hidden></div><div id="v-events" class="view pg w" hidden></div><div id="v-alumni" class="view pg w" hidden></div><div id="v-stories" class="view pg w" hidden></div><div id="v-team" class="view pg w" hidden></div><div id="v-dash" class="view pg w" hidden></div>
+</main>
+<footer><div class="w"><b>SAN – Student Alumni Network</b><div class="gt" style="font-weight:700;margin:4px 0 14px">Connect • Guide • Grow</div><a data-go="home">Home</a><a data-go="alumni">Alumni</a><a data-go="opps">Opportunities</a><a data-go="events">Events</a><a data-go="stories">Stories</a><a data-go="about">About</a><a data-act="info" data-id="Contact">Contact</a><a data-act="info" data-id="Privacy Policy">Privacy Policy</a><a data-act="info" data-id="Terms">Terms</a></div></footer>
+<div id="mod" hidden><div id="mb" role="dialog" aria-modal="true"></div></div><div id="toast" hidden></div>
+<script>
+document.documentElement.classList.add('js');
+const $=s=>document.querySelector(s),E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let S={users:[],me:null,saved:[],team:[],reqs:[],posts:[],stories:[]};try{S=Object.assign(S,JSON.parse(localStorage.getItem('san')||'{}'))}catch(e){}
+const save=()=>{try{localStorage.setItem('san',JSON.stringify(S))}catch(e){}};
+
+// Backend API connection bridge
+const API_BASE = window.location.origin.includes(':8000') ? '/api' : 'http://localhost:8000/api';
+async function api(path, method='GET', body=null){
+  try{
+    const opts = { method, headers: {'Content-Type': 'application/json'} };
+    if(body) opts.body = JSON.stringify(body);
+    const r = await fetch(API_BASE + path, opts);
+    if(r.ok) return await r.json();
+  }catch(e){}
+  return null;
+}
+
+const AL=[
+{id:'a1',n:'Priya Nair',g:'f',y:2019,d:'Computer Science',c:'Google',r:'Software Engineer',s:['Python','Algorithms','System Design'],i:'Technology',x:'5 years',g:['Interview prep','DSA roadmap','Resume review']},
+{id:'a2',n:'Arjun Mehta',g:'m',y:2018,d:'Electronics',c:'Texas Instruments',r:'Hardware Engineer',s:['VLSI','Embedded C','MATLAB'],i:'Semiconductors',x:'6 years',g:['Core jobs','Higher studies','Projects']},
+{id:'a3',n:'Sneha Iyer',g:'f',y:2020,d:'Information Technology',c:'Zoho',r:'Product Manager',s:['Product Strategy','SQL','Figma'],i:'Technology',x:'4 years',g:['Product careers','Case interviews','Internships']},
+{id:'a4',n:'Rahul Verma',g:'m',y:2017,d:'Mechanical',c:'Tata Motors',r:'Design Engineer',s:['CAD','Ansys','Lean'],i:'Automotive',x:'7 years',g:['Core placements','GATE','Industry skills']},
+{id:'a5',n:'Kavya Reddy',g:'f',y:2021,d:'Computer Science',c:'Microsoft',r:'Data Scientist',s:['Machine Learning','Python','Statistics'],i:'Technology',x:'3 years',g:['Data science path','Kaggle','Research']},
+{id:'a6',n:'Imran Khan',g:'m',y:2016,d:'Management',c:'Deloitte',r:'Consultant',s:['Finance','Excel','Communication'],i:'Consulting',x:'8 years',g:['MBA prep','Consulting cases','Networking']}];
+const OP=[
+{id:'o1',t:'Backend Developer Intern',type:'Internship',o:'Zoho',l:'Chennai',s:['Java','SQL'],dl:'2026-11-15',d:'Six-month paid internship working on cloud services with a mentor from the platform team.'},
+{id:'o2',t:'ML Research Intern',type:'Internship',o:'Microsoft Research',l:'Remote',s:['Python','Machine Learning'],dl:'2026-11-30',d:'Work on applied ML projects, referred by SAN alumni.'},
+{id:'o3',t:'Graduate Software Engineer',type:'Job',o:'Google',l:'Bengaluru',s:['Algorithms','System Design'],dl:'2026-12-10',d:'Full-time entry role for 2027 graduates across product teams.'},
+{id:'o4',t:'Graduate Engineer Trainee',type:'Job',o:'Tata Motors',l:'Pune',s:['CAD','Lean'],dl:'2026-12-05',d:'Two-year rotational programme for mechanical and electrical graduates.'},
+{id:'o5',t:'SAN Build-a-thon 2026',type:'Hackathon',o:'SAN Innovation Cell',l:'Campus Auditorium',s:['React','Python','UI Design'],dl:'2026-11-05',d:'36-hour hackathon on campus-focused problem statements. Teams of 3 to 4.'},
+{id:'o6',t:'Smart India Practice Sprint',type:'Hackathon',o:'IEEE Student Branch',l:'Online',s:['IoT','Machine Learning'],dl:'2026-11-20',d:'Warm-up sprint with alumni judges and mentor office hours.'},
+{id:'o7',t:'Alumni Career Talk: Breaking into Tech',type:'Event',o:'Alumni Office',l:'Seminar Hall',s:['Careers','Interviews'],dl:'2026-10-25',d:'Panel with alumni from Google, Zoho and Microsoft plus open Q&A.'},
+{id:'o8',t:'Resume & LinkedIn Clinic',type:'Event',o:'Placement Cell',l:'Online',s:['Resume','Networking'],dl:'2026-10-30',d:'Live resume reviews by alumni recruiters.'}];
+const ST=[{id:'s1',n:'Aarav Shah',g:'m',d:'Computer Science',s:['Python','Machine Learning','UI Design'],i:['AI','Hackathons']},
+{id:'s2',n:'Meera Joshi',g:'f',d:'Information Technology',s:['React','JavaScript','Backend'],i:['Web','Startups']},
+{id:'s3',n:'Dev Patel',g:'m',d:'Electronics',s:['IoT','Embedded C','Python'],i:['Robotics','Hackathons']},
+{id:'s4',n:'Ananya Rao',g:'f',d:'Computer Science',s:['Figma','UI Design','React'],i:['Design','Web']},
+{id:'s5',n:'Rohit Singh',g:'m',d:'Information Technology',s:['Node.js','SQL','Backend','Machine Learning'],i:['AI','Fintech']},
+{id:'s6',n:'Isha Kapoor',g:'f',d:'Biotechnology',s:['Data Analysis','Python','Presentation'],i:['Healthtech','AI']},
+{id:'s7',n:'Karan Malhotra',g:'m',d:'Computer Science',s:['Flutter','Firebase','UI Design'],i:['Mobile','Startups']},
+{id:'s8',n:'Nisha Thomas',g:'f',d:'Management',s:['Pitching','Market Research','Finance'],i:['Fintech','Startups']}];
+const SG=[{id:'t1',cat:'Career Story',role:'alumni',g:'f',t:'My journey from college to my first software engineering job',n:'Priya Nair',y:'Class of 2019',c:'Google',date:'2 days ago',b:'I started with no internship and a weak resume. I picked one language, solved problems daily for eight months and built two projects with friends. Alumni mock interviews exposed my gaps in system design, and by final year I had three offers. Consistency beat talent.'},
+{id:'t2',cat:'Office Life',role:'alumni',g:'f',t:'A day in the life of a product manager at Zoho',n:'Sneha Iyer',y:'Class of 2020',c:'Zoho',date:'3 days ago',b:'Mornings start with a team stand-up, then customer feedback review. Afternoons go to roadmap talks with designers and engineers. The biggest surprise: most of my job is listening and writing clearly, not coding.'},
+{id:'t3',cat:'Tech Update',role:'alumni',g:'f',t:'Why small language models are getting attention',n:'Kavya Reddy',y:'Class of 2021',c:'Microsoft',date:'5 days ago',b:'Teams are finding that smaller models fine-tuned for one task can be cheaper and faster than huge general ones. For students, this means useful AI projects can run on a laptop. Start with a clear problem, a clean dataset and a simple evaluation.'},
+{id:'t4',cat:'Tech Update',role:'alumni',g:'m',t:'Three habits that make code easier to maintain',n:'Arjun Mehta',y:'Class of 2018',c:'Texas Instruments',date:'1 week ago',b:'Write small functions, name things honestly and add a test whenever you fix a bug. In embedded work a bug can cost weeks, and these habits have saved my team more than any tool.'},
+{id:'t5',cat:'Hackathon Update',role:'student',g:'f',t:'We shipped a campus bus tracker in 24 hours',n:'Meera Joshi',y:'Information Technology',c:'',date:'Yesterday',b:'Our team of four built a live bus tracker using React and a small Node backend. We split work early: one on UI, two on backend, one on pitch and testing. We did not win, but alumni judges gave great feedback.'},
+{id:'t6',cat:'Hackathon Update',role:'student',g:'m',t:'What our team learned from losing round two',n:'Aarav Shah',y:'Computer Science',c:'',date:'4 days ago',b:'We over-built the model and under-prepared the demo. Next time we will fix the story first, then the features. Teams that practised their pitch three times clearly stood out.'},
+{id:'t7',cat:'Event Recap',role:'student',g:'f',t:'Recap: Alumni Career Talk, five things we learned',n:'Ananya Rao',y:'Computer Science',c:'',date:'6 days ago',b:'Alumni from Google, Zoho and Microsoft shared how they prepared. Key lessons: start early, build visible projects, ask for referrals politely, practise explaining your work, and keep learning.'},
+{id:'t8',cat:'Event Recap',role:'alumni',g:'m',t:'Highlights from the Resume and LinkedIn Clinic',n:'Imran Khan',y:'Class of 2016',c:'Deloitte',date:'1 week ago',b:'I reviewed 20 resumes. The most common fix: replace duties with measurable results. Keep it to one page, and make your LinkedIn headline say what you can do, not just where you study.'},
+{id:'t9',cat:'Career Story',role:'alumni',g:'m',t:'Cracking core interviews as a mechanical engineer',n:'Rahul Verma',y:'Class of 2017',c:'Tata Motors',date:'2 weeks ago',b:'Core companies test fundamentals deeply. I revised thermodynamics and design basics, built a CAD portfolio and practised explaining projects simply. Treat every project as an interview story.'}];
+const avt=(g,s=48)=>{const f=g==='f',bg=f?'#c084fc':'#38bdf8',id='c'+(f?'f':'m');return `<svg class="av" width="${s}" height="${s}" viewBox="0 0 48 48" role="img" aria-label="${f?'Female':'Male'} avatar" style="background:none"><clipPath id="${id}"><circle cx="24" cy="24" r="24"/></clipPath><circle cx="24" cy="24" r="24" fill="${bg}" fill-opacity=".28"/><g clip-path="url(#${id})">${f?'<path d="M11 34c-3-16 3-26 13-26s16 10 13 26z" fill="#5b3a8e"/>':''}<ellipse cx="24" cy="47" rx="15" ry="12" fill="${bg}"/><circle cx="24" cy="21" r="8" fill="#f1c9a5"/>${f?'<path d="M15 21c0-9 5-12 9-12s9 3 9 12c-3-3-6-6-9-6s-6 3-9 6z" fill="#5b3a8e"/>':'<path d="M15.5 19c0-7 4-9 8.5-9s8.5 2 8.5 9c-3-3-6-4-8.5-4s-5.5 1-8.5 4z" fill="#2b2118"/>'}</g></svg>`};
+const allSt=()=>[...S.stories,...SG],allOp=()=>[...S.posts,...OP],me=()=>S.users.find(u=>u.email===S.me),ini=n=>n.split(' ').map(x=>x[0]).join('').slice(0,2).toUpperCase();
+const chips=(a,c='')=>(a||[]).map(x=>`<span class="chip ${c}">${E(x)}</span>`).join('');
+function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toast.h);toast.h=setTimeout(()=>t.hidden=true,2600)}
+function openM(h){$('#mb').innerHTML=h+'<button class="btn sm" data-act="close" style="margin-top:16px;width:100%">Close</button>';$('#mod').hidden=false}
+const closeM=()=>$('#mod').hidden=true;
+function authBar(){const u=me();$('#auth').innerHTML=u?`<button class="btn sm" data-go="dash" style="flex:none">${E(u.name.split(' ')[0])}'s Dashboard</button><button class="btn sm" data-act="out" style="flex:none">Sign Out</button>`:`<button class="btn sm" data-act="signin" style="flex:none">Sign In</button><button class="btn pr sm" data-act="join" data-id="student" style="flex:none">Register</button>`}
+const VIEWS=['home','opps','events','alumni','stories','team','dash'];
+function go(v){if(v==='dash'&&!me())return authM('in');const hs=v==='about';if(hs)v='home';VIEWS.forEach(x=>$('#v-'+x).hidden=x!==v);
+document.querySelectorAll('#links a').forEach(a=>a.classList.toggle('on',a.dataset.go===(hs?'about':v)));$('#links').classList.remove('open');
+({opps:()=>oppView($('#v-opps'),'All','Opportunities','Internships, jobs, hackathons and events in one place.'),events:()=>oppView($('#v-events'),'Event','Events','Talks, clinics and meet-ups with alumni.'),alumni:()=>alView($('#v-alumni')),stories:()=>stView($('#v-stories')),team:()=>teamView($('#v-team')),dash:dash,home:()=>{$('#hs').innerHTML=allSt().slice(0,3).map(stCard).join('')}})[v]();
+if(hs)setTimeout(()=>$('#about').scrollIntoView(),30);else scrollTo(0,0);watch()}
+function watch(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.rv:not(.in)').forEach(x=>io.observe(x))}
+function opCard(o){const sv=S.saved.includes(o.id);return`<div class="card"><span class="chip p">${E(o.type)}</span><h3 style="margin:10px 0 4px;font-size:19px">${E(o.t)}</h3><div class="mu" style="font-size:14px">${E(o.o)} · ${E(o.l)}</div><div>${chips(o.s)}</div><p class="mu" style="font-size:14px">${E(o.d).slice(0,95)}…</p><div class="mu" style="font-size:13px">Deadline: ${E(o.dl)}</div><div class="row" style="margin-top:12px;flex-wrap:nowrap"><button class="btn sm pr" data-act="op" data-id="${o.id}">View Details</button><button class="btn sm" data-act="sv" data-id="${o.id}">${sv?'Saved ✓':'Save'}</button></div></div>`}
+function oppView(el,type,title,sub,fixed){el.innerHTML=`<h1>${title}</h1><p class="mu">${sub}</p><div class="row" style="margin:18px 0"><input id="q" placeholder="Search title, company, skill, location" aria-label="Search" style="flex:3 1 240px"><select id="ty" aria-label="Type" ${fixed?'hidden':''}>${['All','Internship','Job','Hackathon','Event'].map(t=>`<option ${t===type?'selected':''}>${t}</option>`).join('')}</select><select id="lc" aria-label="Location"><option value="">Any location</option><option>Remote</option><option>Online</option><option>Chennai</option><option>Bengaluru</option><option>Pune</option><option>Campus</option></select></div><div class="grid" id="ol"></div>`;
+const f=()=>{const q=$('#q').value.toLowerCase(),ty=$('#ty').value,lc=$('#lc').value.toLowerCase();const r=allOp().filter(o=>(ty==='All'||o.type===ty)&&(!lc||o.l.toLowerCase().includes(lc))&&(o.t+o.o+o.l+o.s.join(' ')).toLowerCase().includes(q));$('#ol').innerHTML=r.map(opCard).join('')||'<p class="mu">No matches. Try different filters.</p>'};
+['q','ty','lc'].forEach(i=>$('#'+i).addEventListener('input',f));f();if(fixed)$('#ty').value=type}
+function alCard(a){return`<div class="card"><div class="row" style="flex-wrap:nowrap">${avt(a.g)}<div><b>${E(a.n)}</b><div class="mu" style="font-size:14px">${E(a.r)} · ${E(a.c)}</div></div></div><div class="mu" style="font-size:13px;margin:10px 0 2px">${E(a.d)} · Class of ${a.y} · ${E(a.x)} experience</div><div>${chips(a.s)}</div><div style="font-size:13px;margin-top:8px"><span class="mu">Guidance:</span> ${E((a.g||[]).join(', '))}</div><button class="btn pr sm" data-act="ment" data-id="${a.id}" style="margin-top:14px">Request Mentorship</button></div>`}
+const alumniAll=()=>[...S.users.filter(u=>u.role==='alumni').map(u=>({id:u.email,n:u.name,g:u.gender||'m',y:u.year,d:u.dept,c:u.company||'—',r:u.jobRole||'Alumnus',s:(u.skills||'').split(',').map(x=>x.trim()).filter(Boolean),i:u.industry||'Technology',x:u.exp||'—',g:['Career guidance']})),...AL];
+function alView(el){const A=alumniAll(),u=a=>[...new Set(a)].sort();el.innerHTML=`<h1>Find a Mentor</h1><p class="mu">Browse verified alumni and request mentorship.</p><div class="row" style="margin:18px 0"><input id="aq" placeholder="Search name, company, role, skills" aria-label="Search alumni" style="flex:3 1 240px"><select id="ad"><option value="">Department</option>${u(A.map(a=>a.d)).map(x=>`<option>${E(x)}</option>`).join('')}</select><select id="ay"><option value="">Grad year</option>${u(A.map(a=>a.y)).reverse().map(x=>`<option>${E(x)}</option>`).join('')}</select><select id="ai"><option value="">Industry</option>${u(A.map(a=>a.i)).map(x=>`<option>${E(x)}</option>`).join('')}</select></div><div class="grid" id="al"></div>`;
+const f=()=>{const q=$('#aq').value.toLowerCase(),d=$('#ad').value,y=$('#ay').value,i=$('#ai').value;$('#al').innerHTML=alumniAll().filter(a=>(!d||a.d===d)&&(!y||String(a.y)===y)&&(!i||a.i===i)&&(a.n+a.c+a.r+a.s.join(' ')).toLowerCase().includes(q)).map(alCard).join('')||'<p class="mu">No alumni found.</p>'};['aq','ad','ay','ai'].forEach(x=>$('#'+x).addEventListener('input',f));f()}
+const by=s=>`${s.role==='alumni'?'Alumni':'Student'} · ${E(s.y)}${s.c?' · '+E(s.c):''}`;
+const stCard=s=>`<div class="card"><div class="row" style="flex-wrap:nowrap;margin-bottom:10px">${avt(s.g,40)}<div><b>${E(s.n)}</b><div class="mu" style="font-size:12.5px">${by(s)}</div></div></div><span class="chip p">${E(s.cat||'Career Story')}</span><h3 style="font-size:18px;margin:8px 0 6px">${E(s.t)}</h3><p class="mu" style="font-size:14px">${E(s.b).slice(0,120)}…</p><div class="row" style="flex-wrap:nowrap;margin-top:8px"><button class="btn sm" data-act="story" data-id="${s.id}">Read Story</button><span class="mu" style="font-size:12px;flex:none">${E(s.date||'')}</span></div></div>`;
+let SF='All',TD=()=>{};
+function postF(el,after){const u=me();if(!u){el.innerHTML='<div class="card row"><p class="mu" style="margin:0;flex:3 1 240px">Sign in to share a blog, tech update or hackathon update.</p><button class="btn pr sm" data-act="signin">Sign In</button></div>';return}
+const cats=u.role==='alumni'?['Office Life','Tech Update','Career Story','Event Recap']:['Hackathon Update','Career Story','Event Recap','Tech Update'];
+el.innerHTML=`<form class="card" id="sf"><div class="row"><div><label for="sc">Category</label><select id="sc">${cats.map(x=>`<option>${x}</option>`).join('')}</select></div><div style="flex:3 1 240px"><label for="s1">Title</label><input id="s1" required></div></div><label for="s2">${u.role==='alumni'?'Your blog or update':'Your hackathon or project update'}</label><textarea id="s2" rows="4" required placeholder="${u.role==='alumni'?'Your day at the office, a new technology you use, your journey…':'What your team built, what you learned…'}"></textarea><button class="btn pr" style="margin-top:14px">Publish</button></form>`;
+$('#sf').onsubmit=async e=>{e.preventDefault();
+  const storyObj = {id:'u'+Date.now(),t:$('#s1').value,n:u.name,y:u.role==='alumni'?'Class of '+u.year:u.dept,c:u.company||'',b:$('#s2').value,cat:$('#sc').value,role:u.role,g:u.gender||'m',date:'Just now'};
+  S.stories.unshift(storyObj);
+  save();
+  // Optional sync with backend compute
+  api('/stories/', 'POST', storyObj);
+  toast('Published!');
+  after?after():e.target.reset();
+}}
+const stView=el=>{const cats=['All','Career Story','Office Life','Tech Update','Hackathon Update','Event Recap'];el.innerHTML=`<h1>Stories &amp; Updates</h1><p class="mu">Alumni share office life, new technology and career journeys. Students share hackathons and projects.</p><div id="pf2" style="margin:18px 0"></div><div class="tabs">${cats.map(x=>`<button class="btn sm ${x===SF?'on':''}" data-act="sf" data-id="${x}">${x}</button>`).join('')}</div><div class="grid" id="sl"></div>`;postF($('#pf2'),()=>stView(el));$('#sl').innerHTML=allSt().filter(s=>SF==='All'||s.cat===SF).map(stCard).join('')||'<p class="mu">No posts yet.</p>'};
+const sp=t=>(t||'').split(',').map(x=>x.trim()).filter(Boolean);
+const mt=(w,c)=>w.filter(x=>{const a=x.toLowerCase();return c.some(y=>{const b=y.toLowerCase();return a===b||(a.length>2&&b.includes(a))||(b.length>2&&a.includes(b))})}).length;
+const MB=()=>[...ST,...S.users.filter(u=>u.role==='student'&&u.email!==S.me).map(u=>({id:u.email,n:u.name,d:u.dept,g:u.gender||'m',s:sp(u.skills),i:sp(u.interests)}))];
+function teamView(el){const u=me()||{};let R=null,W=[];
+el.innerHTML=`<h1>Team Matchmaker</h1><p class="mu">Every member lists their talents. Tell us the teammate you need and pick from the best matches. Top matches glow green.</p><div class="grid" style="margin:18px 0"><div class="card"><h3 style="font-size:18px">Your talents</h3><label for="ts">Skills</label><input id="ts" placeholder="Python, UI Design" value="${E(u.skills||'')}"><label for="ti">Interests</label><input id="ti" placeholder="AI, Web, Startups" value="${E(u.interests||'')}"><label for="td">Department</label><input id="td" value="${E(u.dept||'')}"></div><div class="card"><h3 style="font-size:18px">Teammate you want</h3><label for="wk">Skills needed</label><input id="wk" placeholder="React, Backend, Figma"><label for="wi">Interests / hackathon type</label><input id="wi" placeholder="Healthtech, AI, Fintech"><button class="btn pr" id="tg" style="margin-top:18px;width:100%">Find My Matches</button></div></div><h2 style="font-size:24px;margin-bottom:14px" id="rh">All members</h2><div class="grid" id="tr"></div><h2 style="font-size:24px;margin:34px 0 14px">My Team</h2><div class="grid" id="mteam"></div>`;
+const card=s=>{const p=s.p,top=p>=70,inT=S.team.includes(s.id);return `<div class="card ${top?'gm':''}"><div class="row" style="flex-wrap:nowrap">${avt(s.g)}<div style="flex:1"><b>${E(s.n)}</b><div class="mu" style="font-size:13px">${E(s.d)}</div></div>${p!=null?`<b class="${top?'gp':'gt'}" style="font-size:22px;flex:none">${p}%</b>`:''}</div>${p!=null?`<div class="bar"><i style="width:${p}%"></i></div>${top?'<span class="chip g">Top match</span>':''}`:''}<div class="mu" style="font-size:12px;margin-top:8px">Talents</div><div>${s.s.map(x=>`<span class="chip ${mt([x],W)?'g':''}">${E(x)}</span>`).join('')}</div><div>${chips(s.i,'p')}</div>${s.reasons?`<div class="mu" style="font-size:12px;margin-top:6px"><i>${E(s.reasons[0])}</i></div>`:''}<button class="btn sm ${inT?'':'pr'}" data-act="tm" data-id="${E(s.id)}" style="margin-top:12px;width:100%">${inT?'Added ✓ (tap to remove)':'Add to Team'}</button></div>`};
+const draw=()=>{$('#tr').innerHTML=(R||MB()).map(card).join('')||'<p class="mu">No members match yet. Try broader skills.</p>';$('#mteam').innerHTML=MB().filter(s=>S.team.includes(s.id)).map(s=>card({...s,p:null})).join('')||'<p class="mu">Add members above to build your team.</p>'};
+$('#tg').onclick=async()=>{
+  W=[...sp($('#wk').value),...sp($('#wi').value)];
+  const M=[...sp($('#ts').value),...sp($('#ti').value)],dp=$('#td').value;
+  if(!W.length&&!M.length)return toast('Enter the teammate skills you want');
+  
+  // Try querying backend 5-factor matching microservice first
+  const backendRes = await api('/matching/find-teammates', 'POST', {
+    user_skills: sp($('#ts').value),
+    user_interests: sp($('#ti').value),
+    user_dept: dp,
+    needed_skills: sp($('#wk').value),
+    needed_interests: sp($('#wi').value)
+  });
+
+  if(backendRes && backendRes.matches && backendRes.matches.length){
+    R = backendRes.matches;
+  } else {
+    // Graceful browser fallback
+    R=MB().map(s=>{
+      const C=[...s.s,...s.i],cov=W.length?mt(W,C)/W.length:0,sim=M.length?Math.min(1,mt(M,C)/Math.max(1,Math.min(M.length,C.length))):0,dd=dp&&s.d.toLowerCase()===dp.toLowerCase()?10:0;
+      return{...s,p:Math.min(99,Math.round(W.length?70*cov+20*sim+dd:90*sim+dd))};
+    }).filter(s=>s.p>0).sort((a,b)=>b.p-a.p);
+  }
+  $('#rh').textContent=R.length?'Best matches for you':'No matches yet';
+  draw();
+};
+TD=draw;draw()}
+function authM(mode,role='student'){const reg=mode==='reg';openM(`<h2 style="margin-bottom:6px">${reg?'Create your SAN account':'Sign in to SAN'}</h2><p class="mu" style="margin:0 0 6px;font-size:14px">${reg?'Join as a '+role+'.':'Welcome back.'} Demo data is stored in your browser.</p><form id="af">${reg?`<label>I am a</label><select id="ar"><option value="student" ${role=='student'?'selected':''}>Student</option><option value="alumni" ${role=='alumni'?'selected':''}>Alumni</option></select><label>Full name</label><input id="an" required><label>Avatar</label><select id="ag"><option value="m">Male avatar</option><option value="f">Female avatar</option></select>`:''}<label>College email</label><input id="ae" type="email" required><label>Password</label><input id="ap" type="password" minlength="4" required>${reg?`<div class="row"><div><label>Department</label><input id="ad2" required></div><div><label>Graduation year</label><input id="ay2" type="number" min="1990" max="2035" required></div></div><div class="row" id="alf"><div><label>Company</label><input id="ac"></div><div><label>Job role</label><input id="aj"></div></div>`:''}<button class="btn pr" style="width:100%;margin-top:18px" type="submit">${reg?'Register':'Sign In'}</button></form><p class="mu" style="text-align:center;font-size:14px;margin-bottom:0">${reg?'Have an account?':'New to SAN?'} <a class="gt lk" data-act="${reg?'signin':'join'}" data-id="student" style="font-weight:700">${reg?'Sign in':'Register'}</a></p>`);
+const tg=()=>{if(reg)$('#alf').hidden=$('#ar').value!=='alumni'};if(reg){$('#ar').onchange=tg;tg()}
+$('#af').onsubmit=e=>{e.preventDefault();const em=$('#ae').value.trim().toLowerCase(),pw=$('#ap').value;if(!reg){const u=S.users.find(x=>x.email===em&&x.pw===pw);if(!u)return toast('Wrong email or password');S.me=em}else{if(S.users.some(x=>x.email===em))return toast('Account already exists, please sign in');const r=$('#ar').value;S.users.push({email:em,pw,role:r,name:$('#an').value.trim(),gender:$('#ag').value,dept:$('#ad2').value.trim(),year:$('#ay2').value,company:$('#ac')?.value||'',jobRole:$('#aj')?.value||'',skills:'',interests:'',exp:'',journey:'',industry:'Technology'});S.me=em;if(r==='alumni')S.reqs.push({id:'r'+Date.now(),to:em,from:'Aarav Shah',msg:'Hi! I would love guidance on getting into tech roles.',st:'Pending'},{id:'r'+(Date.now()+1),to:em,from:'Ananya Rao',msg:'Could you review my resume?',st:'Pending'})}save();closeM();authBar();toast('Welcome to SAN!');go('dash')}}
+let DT=0;const TS=['Profile','Find Alumni','Career Guidance','Internships','Jobs','Hackathons','Events','Find Teammates','Mentorship Requests','Saved','Share Update'],TA=['Alumni Profile','My Experience','Mentorship Requests','Student Connections','Post Opportunity','Share Blog or Update','Post Internship','Post Job','Events'];
+function dash(){const u=me(),tabs=u.role==='student'?TS:TA,el=$('#v-dash');if(DT>=tabs.length)DT=0;const t=tabs[DT];
+el.innerHTML=`<h1>${u.role==='student'?'Student':'Alumni'} Dashboard</h1><p class="mu">Welcome, ${E(u.name)}.</p><div class="tabs" role="tablist">${tabs.map((x,i)=>`<button class="btn sm ${i===DT?'on':''}" data-act="tab" data-id="${i}">${x}</button>`).join('')}</div><div id="dc"></div>`;const c=$('#dc'),mine=S.reqs.filter(r=>r.to===u.email||r.fromE===u.email);
+const prof=(ex)=>{c.innerHTML=`<form class="card" id="pf"><div class="row"><div><label>Name</label><input id="pn" value="${E(u.name)}"></div><div><label>Department</label><input id="pd" value="${E(u.dept)}"></div><div><label>Graduation year</label><input id="py" value="${E(u.year)}"></div><div><label>Avatar</label><select id="pg"><option value="m" ${u.gender!=='f'?'selected':''}>Male</option><option value="f" ${u.gender==='f'?'selected':''}>Female</option></select></div></div><label>Skills (comma separated)</label><input id="ps" value="${E(u.skills)}">${u.role==='student'?`<label>Interests</label><input id="pi" value="${E(u.interests)}">`:`<div class="row"><div><label>Company</label><input id="pc" value="${E(u.company)}"></div><div><label>Job role</label><input id="pj" value="${E(u.jobRole)}"></div><div><label>Experience</label><input id="px" value="${E(u.exp)}" placeholder="e.g. 3 years"></div></div><label>Experience details</label><textarea id="pe" rows="3">${E(u.expd||'')}</textarea><label>Career journey</label><textarea id="pr" rows="4">${E(u.journey)}</textarea>`}<button class="btn pr" style="margin-top:16px">Save Profile</button></form>`;$('#pf').onsubmit=e=>{e.preventDefault();Object.assign(u,{name:$('#pn').value,dept:$('#pd').value,year:$('#py').value,gender:$('#pg').value,skills:$('#ps').value});if(u.role==='student')u.interests=$('#pi').value;else Object.assign(u,{company:$('#pc').value,jobRole:$('#pj').value,exp:$('#px').value,expd:$('#pe').value,journey:$('#pr').value});save();toast('Profile saved')}};
+const form=(ty)=>{c.innerHTML=`<form class="card" id="of"><div class="row"><div><label>Type</label><select id="ot">${['Internship','Job','Hackathon','Event'].map(x=>`<option ${x===ty?'selected':''}>${x}</option>`).join('')}</select></div><div><label>Title</label><input id="o1" required></div></div><div class="row"><div><label>Organization</label><input id="o2" value="${E(u.company)}" required></div><div><label>Location</label><input id="o3" required></div><div><label>Deadline</label><input id="o4" type="date" required></div></div><label>Skills</label><input id="o5"><label>Description</label><textarea id="o6" rows="3" required></textarea><button class="btn pr" style="margin-top:16px">Publish</button></form>`;$('#of').onsubmit=async e=>{e.preventDefault();
+  const newOp = {id:'p'+Date.now(),t:$('#o1').value,type:$('#ot').value,o:$('#o2').value,l:$('#o3').value,dl:$('#o4').value,s:$('#o5').value.split(',').map(x=>x.trim()).filter(Boolean),d:$('#o6').value};
+  S.posts.unshift(newOp);
+  save();
+  api('/opportunities/', 'POST', newOp);
+  toast('Published! Students can now see it.');
+  e.target.reset();
+}};
+const lst=(r,al)=>c.innerHTML=r.map(q=>`<div class="card" style="margin-bottom:12px"><b>${E(al?q.from:q.toN)}</b> <span class="chip ${q.st==='Accepted'?'':'p'}">${q.st}</span><p class="mu" style="margin:6px 0">${E(q.msg)}</p>${al&&q.st==='Pending'?`<button class="btn sm pr" data-act="acc" data-id="${q.id}">Accept</button> <button class="btn sm" data-act="dec" data-id="${q.id}">Decline</button>`:''}</div>`).join('')||'<p class="mu">Nothing here yet.</p>';
+const sub=(ty)=>{oppView(c,ty,ty+(ty==='All'?'':'s'),'',1)};
+
+// Enhanced Career Guidance with AI Roadmap Generator
+async function careerGuidanceView(c){
+  c.innerHTML = `
+    <div class="card" style="margin-bottom:20px">
+      <h3>AI-Powered Career Roadmap Synthesizer</h3>
+      <p class="mu" style="font-size:14px">Generate a step-by-step career milestones roadmap grounded in Saveetha alumni trajectories.</p>
+      <div class="row">
+        <input id="rg" placeholder="Target role (e.g. Software Engineer, Data Scientist)" value="Software Development Engineer" style="flex:3 1 200px">
+        <button class="btn pr sm" id="rbtn" style="flex:0 0 auto">Generate Roadmap</button>
+      </div>
+      <div id="rm_out" style="margin-top:16px"></div>
+    </div>
+    <div class="grid">${[['Build your profile','Add skills, projects and interests so alumni can guide you better.'],['Resume checklist','One page, measurable results, 2 strong projects, links that work.'],['Interview prep','Practise 30 minutes daily, take alumni mock interviews and record your answers.'],['Internship strategy','Apply early, ask alumni for referrals and tailor each application.'],['Networking','Send short specific messages to alumni and follow up politely.'],['Skill roadmap','Pick one domain, learn fundamentals, build 2 projects, then share them.']].map(x=>`<div class="card"><h3 style="font-size:18px">${x[0]}</h3><p class="mu">${x[1]}</p></div>`).join('')}</div>
+  `;
+  $('#rbtn').onclick = async () => {
+    const goal = $('#rg').value.trim() || 'Software Development Engineer';
+    $('#rm_out').innerHTML = '<p class="mu">Synthesizing milestones from alumni journeys...</p>';
+    const res = await api('/roadmap/generate', 'POST', { career_goal: goal, current_year: 3, department: u.dept || 'Computer Science' });
+    if(res && res.milestones){
+      $('#rm_out').innerHTML = `
+        <div style="background:rgba(255,255,255,.03);padding:14px;border-radius:12px;margin-bottom:12px;border:1px solid var(--b)">
+          <b>${E(res.overview)}</b>
+        </div>
+        ${res.milestones.map(m=>`
+          <div class="card" style="margin-bottom:12px">
+            <b>${E(m.stage_title)} (${E(m.estimated_duration)})</b>
+            <p class="mu" style="margin:4px 0 8px">${E(m.description)}</p>
+            <div><b>Skills:</b> ${chips(m.key_skills)}</div>
+            <div style="margin-top:6px;font-size:13px"><span class="mu">Alumni Tip:</span> ${E(m.preparation_tips[0] || 'Focus on consistent practice')}</div>
+          </div>
+        `).join('')}
+      `;
+    } else {
+      $('#rm_out').innerHTML = '<p class="mu">Could not generate online roadmap. Check local network connection.</p>';
+    }
+  };
+}
+
+if(u.role==='student'){[()=>prof(),()=>alView(c),()=>careerGuidanceView(c),()=>sub('Internship'),()=>sub('Job'),()=>sub('Hackathon'),()=>sub('Event'),()=>teamView(c),()=>lst(S.reqs.filter(r=>r.fromE===u.email),0),()=>{const r=allOp().filter(o=>S.saved.includes(o.id));c.innerHTML=`<div class="grid">${r.map(opCard).join('')||'<p class="mu">No saved opportunities yet.</p>'}</div>`},()=>postF(c)][DT]()}
+else{[()=>prof(),()=>prof(),()=>lst(mine.filter(r=>r.to===u.email),1),()=>{const a=mine.filter(r=>r.to===u.email&&r.st==='Accepted');c.innerHTML=a.map(q=>`<div class="card" style="margin-bottom:12px"><b>${E(q.from)}</b><p class="mu" style="margin:4px 0 0">Connected mentee</p></div>`).join('')||'<p class="mu">Accept mentorship requests to build connections.</p>'},()=>form('Internship'),()=>postF(c),()=>form('Internship'),()=>form('Job'),()=>sub('Event')][DT]()}}
+const acts={
+join:r=>authM('reg',r),signin:()=>authM('in'),close:closeM,out:()=>{S.me=null;save();authBar();go('home');toast('Signed out')},
+tab:i=>{DT=+i;dash()},info:t=>openM(`<h2>${E(t)}</h2><p class="mu">${t==='Contact'?'Reach the SAN team at hello@saveetha.ac.in.':'Saveetha Alumni Network connects students, alumni, and campus opportunities.'}</p>`),
+op:id=>{const o=allOp().find(x=>x.id===id);openM(`<span class="chip p">${E(o.type)}</span><h2 style="margin:10px 0 4px">${E(o.t)}</h2><div class="mu">${E(o.o)} · ${E(o.l)} · Deadline ${E(o.dl)}</div><div>${chips(o.s)}</div><p>${E(o.d)}</p><button class="btn pr" data-act="apply" data-id="${id}" style="width:100%">Apply / Register Interest</button>`)},
+apply:id=>{if(!me()){closeM();return authM('reg')}closeM();toast('Interest sent. Good luck!')},
+sv:id=>{if(!me())return authM('reg');S.saved=S.saved.includes(id)?S.saved.filter(x=>x!==id):[...S.saved,id];save();const cur=VIEWS.find(v=>!$('#v-'+v).hidden);cur==='dash'?dash():go(cur)},
+ment:id=>{const u=me();if(!u)return authM('reg');if(u.role!=='student')return toast('Only students can request mentorship');const a=alumniAll().find(x=>x.id===id);openM(`<h2>Request mentorship</h2><p class="mu">Send a short note to ${E(a.n)}.</p><textarea id="mm" rows="4" placeholder="What would you like guidance on?"></textarea><button class="btn pr" data-act="sendm" data-id="${id}" style="width:100%;margin-top:12px">Send Request</button>`)},
+sendm:async id=>{const a=alumniAll().find(x=>x.id===id),m=$('#mm').value.trim();if(!m)return toast('Please write a short note');
+  const reqObj = {id:'r'+Date.now(),to:id,toN:a.n,from:me().name,fromE:S.me,msg:m,st:'Pending'};
+  S.reqs.push(reqObj);
+  save();
+  api('/mentorship/request', 'POST', reqObj);
+  closeM();
+  toast('Request sent to '+a.n);
+},
+acc:id=>{const req=S.reqs.find(r=>r.id===id);if(req){req.st='Accepted';save();api('/mentorship/respond', 'POST', {request_id:id, action:'Accepted'});dash()}},
+dec:id=>{const req=S.reqs.find(r=>r.id===id);if(req){req.st='Declined';save();api('/mentorship/respond', 'POST', {request_id:id, action:'Declined'});dash()}},
+story:id=>{const s=allSt().find(x=>x.id===id);openM(`<h2>${E(s.t)}</h2><div class="mu" style="margin:6px 0 12px">${E(s.n)} · ${by(s)}</div><p>${E(s.b)}</p>`)},
+sf:id=>{SF=id;stView($('#v-stories'))},tm:id=>{if(!me())return authM('reg');S.team=S.team.includes(id)?S.team.filter(x=>x!==id):[...S.team,id];save();TD()},inv:n=>{if(!me())return authM('reg');toast('Team invite sent to '+n)}};
+document.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g){e.preventDefault();return go(g.dataset.go)}const a=e.target.closest('[data-act]');if(a){e.preventDefault();acts[a.dataset.act]?.(a.dataset.id)}if(e.target.id==='mod')closeM()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
+$('#burger').onclick=()=>$('#links').classList.toggle('open');
+(function(){const s=$('#bgs'),P=[[120,120],[340,260],[200,470],[520,140],[640,400],[860,200],[1010,420],[1080,130],[800,560],[420,600]],L=[[0,1],[1,2],[1,3],[3,5],[1,4],[4,5],[5,7],[4,6],[6,7],[4,8],[8,9],[2,9]];
+s.innerHTML=L.map(l=>`<line x1="${P[l[0]][0]}" y1="${P[l[0]][1]}" x2="${P[l[1]][0]}" y2="${P[l[1]][1]}" stroke="#4f6bff" stroke-opacity=".35"/>`).join('')+P.map((p,i)=>`<circle class="nd" cx="${p[0]}" cy="${p[1]}" r="${i%3?6:10}" fill="${i%2?'#22B8FF':'#8B5CF6'}" style="animation-delay:${i*.4}s"/>`).join('')})();
+authBar();go('home');
+</script></body></html>
